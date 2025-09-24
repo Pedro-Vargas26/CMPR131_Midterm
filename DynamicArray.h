@@ -1,52 +1,44 @@
 #pragma once
-
 #ifndef DYNAMICARRAY_H
 #define DYNAMICARRAY_H
 
 #include <exception>
-using std::exception;
+using namespace std;
 
 template<typename T>
 class DynamicArray
 {
 private:
-	int p_size;
 	T* p_ptr;
+	size_t arrSize;
+	size_t arrCapacity;
 
-
-	void mergeSort(T genericArr[], const int& beginningIndex, const int& endingIndex);
-	void merge(T [], const int& , const int& , const int& );
-	void sort();
-
-	class OutOfRange : public exception {
-	private:
-		const char* msg;
-
-	public:
-		OutOfRange() : msg("ERROR: INVALID RANGE ENTERED. "){}
-		OutOfRange(const char* nMsg) : msg(nMsg) {}
-		const char* what() noexcept {
-			return msg;
-		}
-	};
+	
 public:
+
 	DynamicArray();
-	DynamicArray(int);
 	DynamicArray(const DynamicArray&);
 	~DynamicArray();
 
-	void append(const T&);
-	void insert(const T&, const int&);
-	const T& retrieve(const int&) const;
-	void remove(const int&);
-	bool exists(const T&) const;
-	int size()const;
+	const T* data() const noexcept;
 
-	bool erase(const T& needle, bool allOrOne);
-	DynamicArray& operator=(const DynamicArray&);
+	void append(const T&) noexcept;
+	bool exists(const T&) const noexcept;
+	bool empty() const noexcept;
 
-	const T* data() const;
-	friend class Statistical;
+	int remove(const T&) noexcept;
+	int remove(const T&, bool) noexcept;
+	void clear() noexcept;
+	void sort();
+
+	size_t size()const noexcept;
+	size_t capacity() const noexcept;
+	int find(const T&) const noexcept;
+
+
+	T& operator[](int index);
+	const T& operator[](int index) const;
 };
 
 #endif
+
