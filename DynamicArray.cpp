@@ -6,6 +6,7 @@ constexpr int ALLOC_INCREMENTS = 5;
 
 
 
+
 /*
 
 Sort():
@@ -73,6 +74,37 @@ const T* DynamicArray<T>::data() const noexcept {
 	return p_ptr;
 }
 
+
+//precondition: valid state object to insert with '>' overloaded
+//postcondition: will place element at location where obj is < next element.
+template <typename T>
+void DynamicArray<T>::sorted_insert(const T& obj) noexcept {
+
+	if (!p_ptr) {
+		arrCapacity = ALLOC_INCREMENTS;
+		p_ptr = new T[arrCapacity];
+		p_ptr[0] = obj;
+		arrSize = 1;
+		return;
+	}
+
+	if (arrSize == arrCapacity) {
+		arrCapacity += ALLOC_INCREMENTS;
+		T* newPtr = new T[arrCapacity];
+		for (int i = 0; i < arrSize; i++)
+			newPtr[i] = p_ptr[i];
+		delete[] p_ptr;
+		p_ptr = newPtr;
+	}
+
+	int insertIndex = binary_search(p_ptr, arrSize, obj);
+
+	for (int i = arrSize; i > insertIndex; i--)
+		p_ptr[i] = p_ptr[i - 1];
+
+	p_ptr[insertIndex] = obj;
+	arrSize++;
+}
 //precondition: valid state obj (initialized or overloaded with assignment operator
 //postcondition: increased size (or adjusted capacity), with size+1 number of elements. 
 template<typename T>
@@ -124,50 +156,66 @@ bool DynamicArray<T>::empty() const noexcept {
 template <typename T>
 int DynamicArray<T>::remove(const T& needle) noexcept {
 	int numInstances = 0;
-	//test for null ptr
-	if (!p_ptr) return -1;
-	//test if the arr is size of 1 and if it is the search target
-	else if (arrSize == 1 && p_ptr[0] == needle) {
-		//reduce size
-		arrSize--;
+
+	if (!p_ptr || arrSize == 0)
+		return -1;
+
+	// If array is size 1, handle directly
+	if (arrSize == 1 && p_ptr[0] == needle) {
+		arrSize = 0;
 		return ++numInstances;
 	}
-	//if size if > 1 and not a nullptr;
-	else {
-		//iterate over array
-		for (int i = 0; i < arrSize;i++) {
-			//test if the current item is equal to search target
-			if (p_ptr[i] == needle) {
-				//
-				for (int j = i; j < arrSize-1;j++) {
-					p_ptr[j] = p_ptr[(j+1)];
-				}
-				arrSize--;
-				return ++numInstances;
-			}
-		}
-	}
-	return -1;
+
+	// Use binary search to find possible position
+	int pos = binary_search(p_ptr, arrSize, needle);
+
+	// If not in bounds, nothing to remove
+	if (pos < 0 || pos >= static_cast<int>(arrSize))
+		return -1;
+
+	// Verify if found item actually matches
+	if (p_ptr[pos] != needle)
+		return -1;
+
+	// Shift elements left
+	for (int j = pos; j < static_cast<int>(arrSize) - 1; j++)
+		p_ptr[j] = p_ptr[j + 1];
+
+	arrSize--;
+	return ++numInstances;
 }
 //precondition: valid state needle and boolean true for all instances and false for one
 // postcondition: removal of all instances of needle. 
-//returns the number of instances removed. 
-template<typename T>
-int DynamicArray<T>::remove(const T& needle, bool allOrOne)noexcept {
-	if (!p_ptr) return 0;
+template <typename T>
+int DynamicArray<T>::remove(const T& needle, bool allOrOne) noexcept {
+	if (!p_ptr || arrSize == 0)
+		return 0;
+
+	int index = binary_search(p_ptr, arrSize, needle);
+
+	// Not found
+	if (index < 0 || index >= static_cast<int>(arrSize) || p_ptr[index] != needle)
+		return 0;
+
 	int instances = 0;
 
-	for (int i = 0; i < arrSize; i++) {
-		if (p_ptr[i] == needle) {
-			instances++;
-			for (int j = i; j < arrSize - 1; j++)
-				p_ptr[j] = p_ptr[j + 1];
-			arrSize--;
-			if (!allOrOne) break;
-			i--;
-		}
+	if (!allOrOne) {
+		for (int j = index; j < static_cast<int>(arrSize) - 1; j++)
+			p_ptr[j] = p_ptr[j + 1];
+		arrSize--;
+		return 1;
 	}
-	return instances;
+	else {
+		int end = index;
+		while (end < static_cast<int>(arrSize) && p_ptr[end] == needle)
+			++end;
+		instances = end - index;
+
+		for (int j = end; j < static_cast<int>(arrSize); j++)
+			p_ptr[j - instances] = p_ptr[j];
+		arrSize -= instances;
+		return instances;
+	}
 }
 //precondition: none
 //postcondition: clears all elements in dynamic array
