@@ -114,8 +114,8 @@ int main()
 				}
 
 
-				//cout << setw(setw_DisplayWidth) << "\n\tOutliers" << "= ";
-				vector<int> outlierList = stats.outliers();
+				
+				DynamicArray<int> outlierList = stats.outliers();
 				cout << setw(setw_DisplayWidth) << "\n\tOutliers" << "= ";
 				if (outlierList.empty())
 				{
@@ -226,7 +226,7 @@ int main()
 				}
 
 				stats.dArr.sort();
-				out << setw(setw_DisplayWidth) << "\n\tMinimum" << "= "; out << stats.dArr.front();
+				out << left << setw(setw_DisplayWidth) << "\n\tMinimum" << "= "; out << stats.dArr.front();
 				out << setw(setw_DisplayWidth) << "\n\tMaximum" << "= "; out << stats.dArr.back();
 				out << setw(setw_DisplayWidth) << "\n\tRange" << "= "; out << stats.range();
 				out << setw(setw_DisplayWidth) << "\n\tSize" << "= "; out << stats.size();
@@ -276,22 +276,16 @@ int main()
 				}
 
 
-				//cout << setw(setw_DisplayWidth) << "\n\tOutliers" << "= ";
-				vector<int> outlierList = stats.outliers();
+				DynamicArray<int> outlierList = stats.outliers();
 				out << setw(setw_DisplayWidth) << "\n\tOutliers" << "= ";
 				if (outlierList.empty())
 				{
-					//out << setw(setw_DisplayWidth) << "\n\tOutliers" << "= ";
-					out << "None";
+					out << "None\n";
 				}
 				else
 				{
 					for (size_t i = 0; i < outlierList.size(); ++i)
-						cout << outlierList[i] << " ";
-
-
-					//out << setw(setw_DisplayWidth) << "\n\tOutliers" << "= ";
-					//out << stats.interquartile();
+						out << outlierList[i] << " ";
 				}
 
 

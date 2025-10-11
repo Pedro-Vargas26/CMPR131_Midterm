@@ -85,9 +85,9 @@ public:
 	};
 
 	QuartileValues quartilesCalculation() const;
-	QuartileValues quartiles() const;
+	//QuartileValues quartiles() const;
 
-	vector<T> outliers() const;
+	DynamicArray<T> outliers() const;
 
 	double interquartile() const;
 	//void outliers() const;
@@ -461,10 +461,12 @@ double Statistics<T>::interquartile() const
 
 }
 
+//precondition: data must have at least 2 values, Q1 and Q3 must be known
+//postcondition: returns DynamicArray<T> containing values outside of parameters, or returns empty array
 template<class T>
-vector<T> Statistics<T>::outliers() const
+DynamicArray<T> Statistics<T>::outliers() const
 {
-	vector<T> outlierValues;
+	DynamicArray<T> outlierValues;
 	size_t n = dArr.size();
 
 	if (n < 2)
@@ -480,16 +482,11 @@ vector<T> Statistics<T>::outliers() const
 	{
 		if (dArr[i] < lowerFence || dArr[i] > upperFence)
 		{
-			outlierValues.push_back(dArr[i]);
+			outlierValues.append(dArr[i]); 
 		}
 	}
-
 	return outlierValues;
 }
-
-
-
-
 
 
 //precondition: data set must have at least 2 values 
@@ -728,8 +725,8 @@ map<double, size_t > Statistics<T>::displayFrequencyTable() const
 	return frequencyTable;
 }
 
-//precondition: 
-//postcondition:
+//precondition: dataset must not be empty
+//postcondition: writes a properly formatted frequency table to output stream
 template<class T>
 void Statistics<T>::displayFrequencyTableOut(ostream& out) const
 {
@@ -756,9 +753,7 @@ void Statistics<T>::displayFrequencyTableOut(ostream& out) const
 			<< setw(setw1) << (to_string(it->first)) << setw(setw1)
 			<< (to_string(it->second)) << setw(setw1) << (it->second / static_cast<double>(size())) * 100;
 	}
-
 	out << "\n";
-
 }
 
 #endif // !MATHMATICS
