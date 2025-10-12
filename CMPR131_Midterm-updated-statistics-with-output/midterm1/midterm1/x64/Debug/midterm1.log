@@ -1,0 +1,192 @@
+﻿  DynamicArray.cpp
+  main.cpp
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(284,41): warning C4244: 'argument': conversion from '_Ty' to 'const T', possible loss of data
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(284,41): warning C4244:         with
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(284,41): warning C4244:         [
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(284,41): warning C4244:             _Ty=double
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(284,41): warning C4244:         ]
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(284,41): warning C4244:         and
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(284,41): warning C4244:         [
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(284,41): warning C4244:             T=int
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(284,41): warning C4244:         ]
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(826,17): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(826,17):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(33,18):
+          see reference to class template instantiation 'Statistics<int>' being compiled
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(797,1):
+          while compiling class template member function 'void Statistics<int>::dataDisplay(std::ostream &)'
+              C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(65,22):
+              see the first reference to 'Statistics<int>::dataDisplay' in 'main'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(885,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\DynamicArray.cpp(102,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\DynamicArray.cpp(102,13):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(29,18):
+          see reference to class template instantiation 'DynamicArray<T>' being compiled
+          with
+          [
+              T=int
+          ]
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\DynamicArray.cpp(81,60):
+          while compiling class template member function 'void DynamicArray<T>::sorted_insert(const T &) noexcept'
+          with
+          [
+              T=int
+          ]
+              C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(254,28):
+              see the first reference to 'DynamicArray<T>::sorted_insert' in 'dataInsert'
+          with
+          [
+              T=int
+          ]
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(221,16): warning C4244: 'initializing': conversion from 'size_t' to 'long double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(221,16):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(797,1):
+          while compiling class template member function 'void Statistics<int>::dataDisplay(std::ostream &)'
+              C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(65,22):
+              see the first reference to 'Statistics<int>::dataDisplay' in 'main'
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(219,1):
+          while compiling class template member function 'double Statistics<int>::mean(void) const'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(238,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(238,19):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(232,1):
+          while compiling class template member function 'double Statistics<int>::median(void) const'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(244,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(287,16): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(287,16):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(254,1):
+          while compiling class template member function 'DynamicArray<T> Statistics<T>::mode(void) const'
+          with
+          [
+              T=int
+          ]
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(300,18): warning C4244: 'argument': conversion from '_Ty1' to 'const T', possible loss of data
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(300,18): warning C4244:         with
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(300,18): warning C4244:         [
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(300,18): warning C4244:             _Ty1=const double
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(300,18): warning C4244:         ]
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(300,18): warning C4244:         and
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(300,18): warning C4244:         [
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(300,18): warning C4244:             T=int
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(300,18): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(336,16): warning C4244: 'initializing': conversion from 'size_t' to 'long double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(336,16):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(316,1):
+          while compiling class template member function 'double Statistics<int>::standardDeviation(void) const'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(414,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(414,24):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(388,1):
+          while compiling class template member function 'Statistics<int>::QuartileValues Statistics<int>::quartilesCalculation(void) const'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(418,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(419,34): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(444,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(448,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(449,34): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(516,12): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(516,12):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(501,1):
+          while compiling class template member function 'DynamicArray<T> Statistics<T>::outliers(void) const'
+          with
+          [
+              T=int
+          ]
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(516,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(518,30): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(592,19): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(592,19):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(579,1):
+          while compiling class template member function 'double Statistics<int>::meanAbsoluteDeviation(void) const'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(651,12): warning C4244: 'initializing': conversion from 'size_t' to 'double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(651,12):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(648,1):
+          while compiling class template member function 'double Statistics<int>::skewness(void) const'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(677,12): warning C4244: 'initializing': conversion from 'size_t' to 'double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(677,12):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(670,40):
+          while compiling class template member function 'double Statistics<int>::kurtosis(void) const'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(698,17): warning C4244: 'initializing': conversion from 'size_t' to 'long double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(698,17):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(694,46):
+          while compiling class template member function 'double Statistics<int>::kurtosisExcess(void) const'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(778,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(778,23):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(766,1):
+          while compiling class template member function 'void Statistics<int>::displayFrequencyTableOut(std::ostream &) const'
+  
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(745,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(745,23):
+      the template instantiation context (the oldest one first) is
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(149,1):
+          while compiling class template member function 'double Statistics<int>::range(void) const'
+          C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(740,1):
+          while compiling class template member function 'std::map<double,size_t,std::less<double>,std::allocator<std::pair<const double,size_t>>> Statistics<int>::displayFrequencyTable(void) const'
+              C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(281,30):
+              see the first reference to 'Statistics<int>::displayFrequencyTable' in 'Statistics<int>::mode'
+              C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(816,24):
+              see the first reference to 'Statistics<int>::mode' in 'Statistics<int>::dataDisplay'
+              C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\main.cpp(65,22):
+              see the first reference to 'Statistics<int>::dataDisplay' in 'main'
+  
+  Generating Code...
+C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\midterm1\Statistics.h(224,1): warning C4715: 'Statistics<int>::mean': not all control paths return a value
+  midterm1.vcxproj -> C:\Users\jessy\Downloads\CMPR131_Midterm-updated-statistics-with-output (2)\CMPR131_Midterm-updated-statistics-with-output\midterm1\x64\Debug\midterm1.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.

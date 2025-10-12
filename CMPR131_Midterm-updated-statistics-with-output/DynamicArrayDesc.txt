@@ -1,0 +1,35 @@
+Dynamic Array:
+A templated container class built on top of a dynamically allocated array. Provides dynamic resizing, element access, searching, and simple algorithms such as insertion sort.
+
+
+Constructors
+_______________________________________________________________
+Default: Initializes pointer to nullptr, size = 0, capacity = 0.
+Copy: Deep-copies another array’s elements if it has capacity.
+Destructor: Frees memory back to the heap and resets members.
+
+
+
+
+State Methods (all O(1), except exists which is O(n)):
+_____________________________________________________
+exists(val) = linear search for element.
+empty() = true if size == 0.
+size() = returns number of stored elements.
+capacity() = returns allocated storage capacity.
+data() = pointer to first element (or nullptr).
+
+
+Modification Methods
+_______________________________________________________________________________
+append(val)  = Adds an element to the end, resizing in increments of 5 if needed. Complexity: O(n) with autosort.
+remove(val) = Removes first occurrence of val, shifts elements left. Complexity: O(n).
+remove(val, allOrOne) = Removes all or one occurrence(s) depending on flag. Complexity: O(n) worst case.
+clear() = Deletes entire array, resets size/capacity.
+
+
+Sorting
+_______________________________________
+sort() = Insertion sort implementation.
+Best case O(n) (already sorted).
+Worst case O(n^2) (reverse order).
