@@ -112,6 +112,10 @@ public:
 	map<double, size_t > displayFrequencyTable() const;
 	//void displayOut() {}
 	void displayFrequencyTableOut(ostream& out) const;
+
+	void dataDisplay(ostream& out) ;
+
+
 };
 
 // A - E
@@ -698,32 +702,33 @@ double Statistics<T>::relativeStandardDeviation() const
 
 //============================================
 
-// Purpose			: Displays frequency distribution of values.
-// Precondition		: dArr is sorted; not empty.
-// Postcondition	: Returns a map with {value -> count} pairs and prints the table.
-// Time Complexity	: O(n log n) due to map insertions.
-template<class T>
-map<double, size_t > Statistics<T>::displayFrequencyTable() const
-{
-	map<double, size_t > frequencyTable;
+//// Purpose			: Displays frequency distribution of values.
+//// Precondition		: dArr is sorted; not empty.
+//// Postcondition	: Returns a map with {value -> count} pairs and prints the table.
+//// Time Complexity	: O(n log n) due to map insertions.
+//template<class T>
+//map<double, size_t > Statistics<T>::displayFrequencyTable() const
+//{
+//	map<double, size_t > frequencyTable;
+//
+//	for (size_t index = 0; index < size(); index++)
+//	{
+//		frequencyTable[dArr[index]]++;
+//	}
+//
+//	size_t setw1 = 15;
+//	cout << setw(setw1) << "\n\tValue" << setw(setw1) << "Frequency" << setw(setw1) << "Frequency %";
+//	for (std::map<double, size_t>::iterator it = frequencyTable.begin(); it != frequencyTable.end(); ++it)
+//	{
+//		cout << "\n\t"
+//			<< setw(setw1) << (to_string(it->first)) << setw(setw1)
+//			<< (to_string(it->second)) << setw(setw1) << (it->second / static_cast<double>(size())) * 100;
+//	}
+//
+//
+//	return frequencyTable;
+//}
 
-	for (size_t index = 0; index < size(); index++)
-	{
-		frequencyTable[dArr[index]]++;
-	}
-
-	size_t setw1 = 15;
-	cout << setw(setw1) << "\n\tValue" << setw(setw1) << "Frequency" << setw(setw1) << "Frequency %";
-	for (std::map<double, size_t>::iterator it = frequencyTable.begin(); it != frequencyTable.end(); ++it)
-	{
-		cout << "\n\t"
-			<< setw(setw1) << (to_string(it->first)) << setw(setw1)
-			<< (to_string(it->second)) << setw(setw1) << (it->second / static_cast<double>(size())) * 100;
-	}
-
-
-	return frequencyTable;
-}
 
 //precondition: dataset must not be empty
 //postcondition: writes a properly formatted frequency table to output stream
@@ -755,6 +760,150 @@ void Statistics<T>::displayFrequencyTableOut(ostream& out) const
 	}
 	out << "\n";
 }
+
+//precondition: dataset must not be empty
+//postcondition: displays results
+template<class T>
+void Statistics<T>::dataDisplay(ostream& out)
+{
+	int setw_DisplayWidth = 35;
+
+	if (dArr.empty())
+	{
+		out << "\n\tERROR: Dataset is empty.\n";
+		return;
+	}
+
+	dArr.sort();
+	out << left << setw(setw_DisplayWidth) << "\n\tMinimum" << "= "; out << dArr.front();
+	out << setw(setw_DisplayWidth) << "\n\tMaximum" << "= "; out << dArr.back();
+	out << setw(setw_DisplayWidth) << "\n\tRange" << "= "; out << range();
+	out << setw(setw_DisplayWidth) << "\n\tSize" << "= "; out << size();
+	out << setw(setw_DisplayWidth) << "\n\tSum" << "= "; out << sum();
+	out << setw(setw_DisplayWidth) << "\n\tMean" << "= "; out << mean();
+	out << setw(setw_DisplayWidth) << "\n\tMedian" << "= "; out << median();
+	out << setw(setw_DisplayWidth) << "\n\tMode" << "= "; out << mode();
+	out << setw(setw_DisplayWidth) << "\n\tStandard Deviation" << "= "; out << standardDeviation();
+	out << setw(setw_DisplayWidth) << "\n\tVariance" << "= "; out << variance();
+	out << setw(setw_DisplayWidth) << "\n\tMidrange" << "= "; out << midrange();
+
+
+	//quartiles
+	QuartileValues q = quartilesCalculation();
+	out << setw(setw_DisplayWidth) << "\n\tQuartiles";
+	out << "Quartiles:\n";
+	//Q1
+	out << setw(setw_DisplayWidth) << " " << "\t Q1 --> ";
+	if (q.q1Known)
+	{
+		out << fixed << setprecision(1) << q.Q1 << "\n";
+	}
+	else
+		out << "unknown\n";
+	//Q2
+	out << setw(setw_DisplayWidth) << " " << "\t Q2 --> " << fixed << setprecision(1) << q.Q2 << "\n";
+	//Q3
+	out << setw(setw_DisplayWidth) << " " << "\t Q3 --> ";
+	if (q.q3Known)
+	{
+		out << fixed << setprecision(1) << q.Q3 << "\n";
+	}
+	else
+		out << "unknown\n";
+
+
+	//interquartile range
+	if (size() < 4)
+	{
+		out << setw(setw_DisplayWidth) << "\n\tInterquartile Range" << "= ";
+		out << "unknown";
+	}
+	else
+	{
+		out << setw(setw_DisplayWidth) << "\n\tInterquartile Range" << "= ";
+		out << interquartile();
+	}
+
+
+	DynamicArray<T> outlierList = outliers();
+	out << setw(setw_DisplayWidth) << "\n\tOutliers" << "= ";
+	if (outlierList.empty())
+	{
+		out << "None\n";
+	}
+	else
+	{
+		for (size_t i = 0; i < outlierList.size(); ++i)
+			out << outlierList[i] << " ";
+	}
+
+
+
+
+	//sum of squares
+	if (size() < 2)
+	{
+		out << setw(setw_DisplayWidth) << "\n\tSum of Squares" << "= ";
+		out << "unknown";
+	}
+	else
+	{
+		out << setw(setw_DisplayWidth) << "\n\tSum of Squares" << "= ";
+		out << sumOfSquares();
+	}
+
+
+
+	//mean absolute deviation
+	if (size() < 2)
+	{
+		out << setw(setw_DisplayWidth) << "\n\tMean Absolute Deviation" << "= ";
+		out << "unknown";
+	}
+	else
+	{
+		out << setw(setw_DisplayWidth) << "\n\tMean Absolute Deviation" << "= ";
+		out << meanAbsoluteDeviation();
+	}
+
+	//root mean square
+	if (size() < 2)
+	{
+		out << setw(setw_DisplayWidth) << "\n\tRoot Mean Square" << "= ";
+		out << "unknown";
+	}
+	else
+	{
+		out << setw(setw_DisplayWidth) << "\n\tRoot Mean Square" << "= ";
+		out << rootMeanSquare();
+	}
+
+	//Standard Error of the Mean
+	if (size() < 2)
+	{
+		out << setw(setw_DisplayWidth) << "\n\tStandard Error of the Mean" << "= ";
+		out << "unknown";
+	}
+	else
+	{
+		out << setw(setw_DisplayWidth) << "\n\tStandard Error of the Mean" << "= ";
+		out << standardErrorMean();
+	}
+
+
+	out << setw(setw_DisplayWidth) << "\n\tSkewness" << "= " << skewness(); // Broken
+	out << setw(setw_DisplayWidth) << "\n\tKurtosis" << "= " << kurtosis(); // Broken
+
+	out << setw(setw_DisplayWidth) << "\n\tKurtosis Excess" << "= "; out << kurtosisExcess(); // Broken
+	out << setw(setw_DisplayWidth) << "\n\tCoefficient Variation" << "= "; out << coefficientOfVariation(); // EH
+	out << setw(setw_DisplayWidth) << "\n\tRelative Standard Deviation" << "= "; out << relativeStandardDeviation(); // EHHHH
+
+	displayFrequencyTableOut(out);
+	out << "\n\n";
+
+}
+
+
 
 #endif // !MATHMATICS
 
