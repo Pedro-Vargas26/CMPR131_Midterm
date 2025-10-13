@@ -1,0 +1,189 @@
+﻿  main.cpp
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(252,8): warning C4101: 'otherInput': unreferenced local variable
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(395,41): warning C4244: 'argument': conversion from '_Ty' to 'const T', possible loss of data
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(395,41): warning C4244:         with
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(395,41): warning C4244:         [
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(395,41): warning C4244:             _Ty=double
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(395,41): warning C4244:         ]
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(395,41): warning C4244:         and
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(395,41): warning C4244:         [
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(395,41): warning C4244:             T=int
+C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(395,41): warning C4244:         ]
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(827,17): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(827,17):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(34,18):
+          see reference to class template instantiation 'Statistics<int>' being compiled
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(798,1):
+          while compiling class template member function 'void Statistics<int>::dataDisplay(std::ostream &)'
+              C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(71,22):
+              see the first reference to 'Statistics<int>::dataDisplay' in 'main'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(886,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\DynamicArray.cpp(103,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\DynamicArray.cpp(103,13):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(30,18):
+          see reference to class template instantiation 'DynamicArray<T>' being compiled
+          with
+          [
+              T=int
+          ]
+          C:\Users\13108\Desktop\midterm\midterm\midterm\DynamicArray.cpp(82,60):
+          while compiling class template member function 'void DynamicArray<T>::sorted_insert(const T &) noexcept'
+          with
+          [
+              T=int
+          ]
+              C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(365,28):
+              see the first reference to 'DynamicArray<T>::sorted_insert' in 'dataInsert'
+          with
+          [
+              T=int
+          ]
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(222,16): warning C4244: 'initializing': conversion from 'size_t' to 'long double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(222,16):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(798,1):
+          while compiling class template member function 'void Statistics<int>::dataDisplay(std::ostream &)'
+              C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(71,22):
+              see the first reference to 'Statistics<int>::dataDisplay' in 'main'
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(220,1):
+          while compiling class template member function 'double Statistics<int>::mean(void) const'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(239,19): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(239,19):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(233,1):
+          while compiling class template member function 'double Statistics<int>::median(void) const'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(245,37): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(288,16): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(288,16):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(255,1):
+          while compiling class template member function 'DynamicArray<T> Statistics<T>::mode(void) const'
+          with
+          [
+              T=int
+          ]
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(301,18): warning C4244: 'argument': conversion from '_Ty1' to 'const T', possible loss of data
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(301,18): warning C4244:         with
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(301,18): warning C4244:         [
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(301,18): warning C4244:             _Ty1=const double
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(301,18): warning C4244:         ]
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(301,18): warning C4244:         and
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(301,18): warning C4244:         [
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(301,18): warning C4244:             T=int
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(301,18): warning C4244:         ]
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(337,16): warning C4244: 'initializing': conversion from 'size_t' to 'long double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(337,16):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(317,1):
+          while compiling class template member function 'double Statistics<int>::standardDeviation(void) const'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(415,24): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(415,24):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(389,1):
+          while compiling class template member function 'Statistics<int>::QuartileValues Statistics<int>::quartilesCalculation(void) const'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(419,39): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(420,34): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(445,25): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(449,52): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(450,34): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(517,12): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(517,12):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(502,1):
+          while compiling class template member function 'DynamicArray<T> Statistics<T>::outliers(void) const'
+          with
+          [
+              T=int
+          ]
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(517,36): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(519,30): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(593,19): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(593,19):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(580,1):
+          while compiling class template member function 'double Statistics<int>::meanAbsoluteDeviation(void) const'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(652,12): warning C4244: 'initializing': conversion from 'size_t' to 'double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(652,12):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(649,1):
+          while compiling class template member function 'double Statistics<int>::skewness(void) const'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(678,12): warning C4244: 'initializing': conversion from 'size_t' to 'double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(678,12):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(671,40):
+          while compiling class template member function 'double Statistics<int>::kurtosis(void) const'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(699,17): warning C4244: 'initializing': conversion from 'size_t' to 'long double', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(699,17):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(695,46):
+          while compiling class template member function 'double Statistics<int>::kurtosisExcess(void) const'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(779,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(779,23):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(767,1):
+          while compiling class template member function 'void Statistics<int>::displayFrequencyTableOut(std::ostream &) const'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(746,23): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'main.cpp')
+      C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(746,23):
+      the template instantiation context (the oldest one first) is
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(150,1):
+          while compiling class template member function 'double Statistics<int>::range(void) const'
+          C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(741,1):
+          while compiling class template member function 'std::map<double,size_t,std::less<double>,std::allocator<std::pair<const double,size_t>>> Statistics<int>::displayFrequencyTable(void) const'
+              C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(282,30):
+              see the first reference to 'Statistics<int>::displayFrequencyTable' in 'Statistics<int>::mode'
+              C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(817,24):
+              see the first reference to 'Statistics<int>::mode' in 'Statistics<int>::dataDisplay'
+              C:\Users\13108\Desktop\midterm\midterm\midterm\main.cpp(71,22):
+              see the first reference to 'Statistics<int>::dataDisplay' in 'main'
+  
+C:\Users\13108\Desktop\midterm\midterm\midterm\Statistics.h(225,1): warning C4715: 'Statistics<int>::mean': not all control paths return a value
+  midterm.vcxproj -> C:\Users\13108\Desktop\midterm\midterm\x64\Debug\midterm.exe
