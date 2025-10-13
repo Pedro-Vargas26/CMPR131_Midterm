@@ -1,3 +1,4 @@
+
 #include "DynamicArray.h"
 #include <exception>
 using namespace std;
@@ -20,10 +21,10 @@ void DynamicArray<T>::sort() {
 	//begin array at index[1]
 	for (int i = 1; i < arrSize; i++) {
 		//set current comparison factor to arr[i]
-			T key = p_ptr[i];
-			//set separate index to [i-1]
-			int j = i - 1;
-			//test if j is >= 0, and while it is greater than j+1
+		T key = p_ptr[i];
+		//set separate index to [i-1]
+		int j = i - 1;
+		//test if j is >= 0, and while it is greater than j+1
 		while (j >= 0 && p_ptr[j] > key) {
 			//set j+1 (i) to it's previous value. 
 			p_ptr[j + 1] = p_ptr[j];
@@ -125,7 +126,7 @@ void DynamicArray<T>::append(const T& obj) noexcept {
 			//re-allocate 5 slots after completion
 			T* newArr = nullptr;
 			newArr = new T[arrCapacity + ALLOC_INCREMENTS];
-			for (int i = 0; i < arrSize;i++)
+			for (int i = 0; i < arrSize; i++)
 				newArr[i] = p_ptr[i];
 			delete[] p_ptr;
 			p_ptr = newArr;
@@ -139,7 +140,7 @@ void DynamicArray<T>::append(const T& obj) noexcept {
 template<typename T>
 bool DynamicArray<T>::exists(const T& needle) const noexcept {
 	if (p_ptr) {
-		for (int i = 0; i < arrSize;i++)
+		for (int i = 0; i < arrSize; i++)
 			if (p_ptr[i] == needle)return true;
 	}
 	return false;
@@ -244,7 +245,7 @@ template<typename T>
 int DynamicArray<T>::find(const T& needle) const noexcept {
 	if (!p_ptr)return -1;
 
-	for (size_t i = 0; i < arrSize;i++) 
+	for (size_t i = 0; i < arrSize; i++)
 		if (p_ptr[i] == needle)return (int)i;
 
 	return -1;
@@ -263,4 +264,66 @@ const T& DynamicArray<T>::operator[](int index) const {
 	if (index < 0 || index >= arrSize || !p_ptr)
 		throw std::exception("ERROR: OUT OF BOUNDS. ");
 	return p_ptr[index];
+}
+
+
+template<typename T>
+T& DynamicArray<T>::front() const
+{
+	/*if (empty())
+		throw std::out_of_range("Array is Empty");
+
+	if (p_ptr == nullprt)
+		throw std::is_null_pointer("Array ptr is nullptr");*/
+
+	return p_ptr[0];
+}
+
+//precondition: valid startingIndex and endingIndex within current array bounds (0 ≤ startingIndex ≤ endingIndex < arrSize)
+//postcondition: removes all elements between [startingIndex, endingIndex], shifts remaining elements left, updates arrSize, and returns number of removed elements
+template<typename T>
+int DynamicArray<T>::remove(const int& startingIndex, const int& endingIndex)  {
+	// --- validation ---
+	if (arrSize == 0) {
+		throw std::exception("ERROR: INVALID SIZING FOR THIS OPERATION. ");
+	}
+	if (startingIndex < 0 || endingIndex < startingIndex || endingIndex >= arrSize) {
+		throw std::exception("ERROR: INVALID INDEX SPECIFIED. ");
+	}
+
+	// number of elements to remove
+	int rangeCount = (endingIndex - startingIndex) + 1;
+
+	// --- shift remaining elements left ---
+	for (int i = endingIndex + 1; i < arrSize; ++i) {
+		p_ptr[i - rangeCount] = p_ptr[i]; // copy, not move
+	}
+
+	// --- update size ---
+	arrSize -= rangeCount;
+
+	// optional: reset cleared positions (good for debugging / deterministic behavior)
+	for (int i = arrSize; i < arrSize + rangeCount; ++i) {
+		p_ptr[i] = T(); // reinitialize cleared tail slots
+	}
+
+	return rangeCount;
+}
+
+template<typename T>
+T& DynamicArray<T>::back() const
+{
+	//if (empty())
+	//	throw std::out_of_range("Array is Empty");
+
+	//if (p_ptr == nullprt)
+	//	throw std::is_null_pointer("Array ptr is nullptr");
+
+	return p_ptr[arrSize - 1];
+}
+
+template<typename T>
+T* DynamicArray<T>::ptr() const
+{
+	return p_ptr;
 }
