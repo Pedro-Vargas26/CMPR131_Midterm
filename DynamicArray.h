@@ -1,3 +1,4 @@
+
 #pragma once
 #ifndef DYNAMICARRAY_H
 #define DYNAMICARRAY_H
@@ -29,12 +30,20 @@ public:
 
     int remove(const T&) noexcept;
     int remove(const T&, bool) noexcept;
+    int remove(const int&, const int&);
     void clear() noexcept;
     void sort();
 
     std::size_t size() const noexcept;
     std::size_t capacity() const noexcept;
     int find(const T&) const noexcept;
+
+    // Added by JTZR
+    //======
+    T* ptr() const;
+    T& front() const;
+    T& back() const;
+    //======
 
     T& operator[](int index);
     const T& operator[](int index) const;
